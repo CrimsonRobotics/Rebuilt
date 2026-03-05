@@ -26,7 +26,7 @@ public class Climber extends SubsystemBase {
   RelativeEncoder climberEncoder;
 
   public Climber() {
-  /*   climberMotor1 = new SparkMax(0, SparkMax.MotorType.kBrushless);
+    climberMotor1 = new SparkMax(Constants.climber.climberMotorID, SparkMax.MotorType.kBrushless);
     climberConfig = new SparkMaxConfig();
     climberPID = new PIDController(Constants.climber.climberP, Constants.climber.climberI, Constants.climber.climberD);
     climberSlewRateLimiter = new SlewRateLimiter(Constants.climber.climberSlewRate);
@@ -39,9 +39,9 @@ public class Climber extends SubsystemBase {
     .voltageCompensation(12);
 
     climberMotor1.configure(climberConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
-  */
+  
   }
-/* 
+ 
   public void resetClimbEncoder(){
     climberEncoder.setPosition(0);
   }
@@ -77,11 +77,15 @@ public class Climber extends SubsystemBase {
     return false;
    }
   }
-  */
+
+  public void manualClimber(double speed){
+    climberMotor1.set(speed);
+  }
+  
 
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
-   // SmartDashboard.putNumber("Climber Position", getCurrentClimberPosition());
+   SmartDashboard.putNumber("Climber Position", getCurrentClimberPosition());
   }
 }

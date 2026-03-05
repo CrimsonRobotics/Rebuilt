@@ -31,7 +31,7 @@ public final class Constants {
 
   public static class climber {
     public static final int climberMotorID= 55; 
-    public static final double climberP = .5;
+    public static final double climberP = 0;
     public static final double climberI = 0;
     public static final double climberD = 0;
     public static final double climberSlewRate = 0.5; //TODO: Change this jawn
@@ -51,7 +51,7 @@ public final class Constants {
     public static final int intakePivotCurrentLimit = 20;
     public static final int intakeRollerCurrentLimit = 20;
 
-    public static final double intakeRollerSpeed = 0.8; 
+    public static final double intakeRollerSpeed = .65;  //.8
     public static final double intakePivotKp = .1; //TODO: Change
     public static final double intakePivotKi = 0.01; 
     public static final double intakePivotKd = 0; 
