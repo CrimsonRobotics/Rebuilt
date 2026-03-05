@@ -51,7 +51,7 @@ public final class Constants {
     public static final int intakePivotCurrentLimit = 20;
     public static final int intakeRollerCurrentLimit = 20;
 
-    public static final double intakeRollerSpeed = .65;  //.8
+    public static final double intakeRollerSpeed = .8;  //.8
     public static final double intakePivotKp = .1; //TODO: Change
     public static final double intakePivotKi = 0.01; 
     public static final double intakePivotKd = 0; 
