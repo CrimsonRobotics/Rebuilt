@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj2.command.button.RobotModeTriggers;
+import frc.robot.Commands.Climber.ClimbDown;
 import frc.robot.Commands.Climber.ClimbDownAuto;
 import frc.robot.Commands.Climber.ClimbManual;
 import frc.robot.Commands.Climber.ClimbUp;
@@ -82,7 +83,7 @@ public class RobotContainer {
     //Climber Buttons
     private final JoystickButton climbUp = new JoystickButton(joystickOR, 5);
     private final JoystickButton climbDown = new JoystickButton(joystickOR, 6);
-    private final JoystickButton climbManual = new JoystickButton(joystickOL, 8); //Right side bottom left
+    //private final JoystickButton climbManual = new JoystickButton(joystickOL, 8); //Right side bottom left
 
     //Intake Buttons
     private final JoystickButton intaking = new JoystickButton(joystickOL, 1);
@@ -117,9 +118,9 @@ public class RobotContainer {
         //hoodReverse.whileTrue(new HoodReverse(shoot)); // Button 4 on OR FOR NOW
        
         //Climber Button Bindings
-        //climbUp.whileTrue(new ClimbUp(climber));
-        //climbDown.whileTrue(new ClimbDownAuto());
-        climbManual.whileTrue(new ClimbManual(climber));
+        climbUp.whileTrue(new ClimbUp(climber));
+        climbDown.whileTrue(new ClimbDown(climber));
+        //climbManual.whileTrue(new ClimbManual(climber));
 
         //Intake Button Bindings
         //intaking.whileTrue(new RunRollers(intake)); // Button 3 on OL
