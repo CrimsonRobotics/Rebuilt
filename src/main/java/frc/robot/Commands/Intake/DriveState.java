@@ -25,8 +25,8 @@ public class DriveState extends Command {
   @Override
   public void execute() {
       //intake.runIntakeRollers(0);
-      intake.intakeToPosition(Constants.intake.driveIntakeAngle);
-      //intake.basicPivot(.05);
+      //intake.intakeToPosition(Constants.intake.driveIntakeAngle);
+      intake.basicPivot(.1);
       //intake.basicPivot(Constants.intake.feedForwardBase);
   }
 

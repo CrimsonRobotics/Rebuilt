@@ -25,6 +25,7 @@ import frc.robot.Commands.Intake.Intaking;
 import frc.robot.Commands.Intake.RunRollers;
 import frc.robot.Commands.Shooter.BasicShoot;
 import frc.robot.Commands.Shooter.HoodReverse;
+import frc.robot.Commands.Shooter.HoodUp;
 import frc.robot.Commands.Shooter.ManualShoot;
 import frc.robot.Commands.Shooter.ShootAtPOI;
 import frc.robot.generated.Telemetry;
@@ -74,8 +75,9 @@ public class RobotContainer {
 
     //Shooter Buttons
     private final JoystickButton shootAtPOI = new JoystickButton(joystickOR, 3); //TODO: Make 1
-    private final JoystickButton spoolShooter = new JoystickButton(joystickOR, 2);
-    private final JoystickButton basicShoot = new JoystickButton(joystickOR, 1);
+    private final JoystickButton spoolShooter = new JoystickButton(joystickOR, 1);
+    private final JoystickButton basicShoot = new JoystickButton(joystickOR, 2);
+    private final JoystickButton hoodUp = new JoystickButton(joystickOR, 3);
     private final JoystickButton hoodReverse = new JoystickButton(joystickOR, 4);
     //Climber Buttons
     private final JoystickButton climbUp = new JoystickButton(joystickOR, 5);
@@ -84,8 +86,8 @@ public class RobotContainer {
 
     //Intake Buttons
     private final JoystickButton intaking = new JoystickButton(joystickOL, 1);
-    private final JoystickButton intakeReset = new JoystickButton(joystickOL, 4);
-    private final JoystickButton intakePivotTest = new JoystickButton(joystickOL, 3);
+    private final JoystickButton intakeReset = new JoystickButton(joystickOL, 3);
+    //private final JoystickButton intakePivotTest = new JoystickButton(joystickOL, 3);
 
     public RobotContainer() {
         configureBindings();
@@ -111,6 +113,7 @@ public class RobotContainer {
        // shootAtPOI.whileTrue(new ShootAtPOI(shoot, tracking)); //Button 1 on OR
         spoolShooter.whileTrue(new ManualShoot(shoot)); //Button 2 on OR FOR NOW and Hood up for now
         basicShoot.whileTrue(new BasicShoot(shoot)); // Button 1 on OR FOR NOW 
+        //hoodUp.whileTrue(new HoodUp(shoot)); //Button 3 on OR
         //hoodReverse.whileTrue(new HoodReverse(shoot)); // Button 4 on OR FOR NOW
        
         //Climber Button Bindings
@@ -120,7 +123,7 @@ public class RobotContainer {
 
         //Intake Button Bindings
         //intaking.whileTrue(new RunRollers(intake)); // Button 3 on OL
-        intakeReset.onTrue(new DriveState(intake)); // Button 4 on OL
+        intakeReset.onTrue(new DriveState(intake)); // Button 3 on OL
         intaking.whileTrue(new Intaking(intake)); //Button 1 OL
         // Idle while the robot is disabled. This ensures the configured
         // neutral mode is applied to the drive motors while disabled.
@@ -155,15 +158,19 @@ public class RobotContainer {
             // Reset our field centric heading to match the robot
             // facing away from our alliance station wall (0 deg).
             drivetrain.runOnce(() -> drivetrain.seedFieldCentric(Rotation2d.kZero)),
-            // Then slowly drive forward (away from us) for 5 seconds.
+            // Then slowly drive forward (away from us) for 3 seconds.
             drivetrain.applyRequest(() ->
-                drive.withVelocityX(0.5)
+                drive.withVelocityX(-0.5)
                     .withVelocityY(0)
                     .withRotationalRate(0)
             )
-            .withTimeout(5.0),
+            .withTimeout(2.0),
             // Finally idle for the rest of auton
-            drivetrain.applyRequest(() -> idle)
+            drivetrain.applyRequest(() -> idle),
+            new BasicShoot(shoot).withTimeout(17)
+          
+            
+           
         );
     }
 }

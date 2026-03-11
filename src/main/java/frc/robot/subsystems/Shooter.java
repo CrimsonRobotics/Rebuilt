@@ -117,7 +117,7 @@ public class Shooter extends SubsystemBase {
   }
 
   public void setHoodSpeedReverse(){
-    hoodPivot.set(-.45);
+    hoodPivot.set(-.2);
   }
  
   public void setKickWheelSpeed(double kickWheelSpeed) {

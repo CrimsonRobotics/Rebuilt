@@ -25,7 +25,7 @@ public class Intaking extends Command {
   @Override
   public void execute() {
       intake.runIntakeRollers(Constants.intake.intakeRollerSpeed);
-      intake.intakeToPosition(Constants.intake.intakingAngle);
+      intake.basicPivot(-.1);
   }
 
   // Called once the command ends or is interrupted.

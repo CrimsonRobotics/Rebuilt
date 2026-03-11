@@ -22,15 +22,12 @@ public final class Constants {
 
     public static final double max_speed = 5;
     public static final double max_angular_speed = 7.0;
-
-    public static final double normal_speed = 1;
-    public static final double slow_speed = 0.4;
   }
 
   
 
   public static class climber {
-    public static final int climberMotorID= 55; 
+    public static final int climberMotorID= 54; 
     public static final double climberP = 0;
     public static final double climberI = 0;
     public static final double climberD = 0;
@@ -38,17 +35,17 @@ public final class Constants {
 
     public static final double climberTargetPos = .45; //TODO: Change this jawn
 
-    public static final int climberCurrentLimit = 0; //TODO: Change this jawn
+    public static final int climberCurrentLimit = 10; //TODO: Change this jawn
 
     public static final double climberTolerance = .1;
   }
 
   public static class intake {
-    public static final int intakePivotID = 35;
+    public static final int intakePivotID = 50; 
     public static final int intakeRollerID1= 11;
     public static final int intakeRollerID2 = 12;
 
-    public static final int intakePivotCurrentLimit = 20;
+    public static final int intakePivotCurrentLimit = 10; //TODO: Hope and pray that ts works it was originally 20
     public static final int intakeRollerCurrentLimit = 20;
 
     public static final double intakeRollerSpeed = .8;  //.8
@@ -59,23 +56,23 @@ public final class Constants {
     public static final double rateLimiterIntakePivot = 4; //TODO: Change this jawn
 
     public static final double intakingAngle = 25;
-    public static final double driveIntakeAngle = 160;  
+    public static final double driveIntakeAngle = 180;  
 
      
   } 
   public static class shooter{
     public static final int hoodPivotID = 46;
     public static final int shooterWheelID = 15;
-    public static final int kickWheelID = 54;
+    public static final int kickWheelID = 55;
 
     public static final int shooterPivotCurrentLimit = 10;
     public static final int shooterWheelCurrentLimit = 20;
     public static final int kickWheelCurrentLimit = 15;
 
-    public static final double kickWheelSpeed = .3;   
+    public static final double kickWheelSpeed = .4;   
     public static final double shooterWheelSpeed = -.7; //-.42
     public static final double rollerRPM = 3000;
-    public static final double shooterWheelTolerance = 30; //TODO: Change this jawn
+    public static final double shooterWheelTolerance = 30; 
 
 
 
@@ -91,11 +88,6 @@ public final class Constants {
     public static final double shooterD = 0;
   }
 
-    public static class hopper{
-      public static final int hopperMotorID = 30;
-      public static final double hopperSpeed = 0.5; //TODO: Change this jawn
-      public static final int hopperCurrentLimit = 0;
-    }
     public static enum rotation{
       DEFAULT,
       CW_90,

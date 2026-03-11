@@ -5,17 +5,16 @@
 package frc.robot.Commands.Shooter;
 
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.Constants;
 import frc.robot.subsystems.Shooter;
 
 /* You should consider using the more terse Command factories API instead https://docs.wpilib.org/en/stable/docs/software/commandbased/organizing-command-based.html#defining-commands */
-public class BasicShoot extends Command {
-  /** Creates a new BasicShoot. */
+public class HoodUp extends Command {
+  /** Creates a new HoodUp. */
   Shooter shoot;
-  public BasicShoot(Shooter shoot) {
-    // Use addRequirements() here to declare subsystem dependencies.
-    addRequirements(shoot);
+  public HoodUp(Shooter shoot) {
     this.shoot = shoot;
+    addRequirements(shoot);
+    // Use addRequirements() here to declare subsystem dependencies.
   }
 
   // Called when the command is initially scheduled.
@@ -25,18 +24,13 @@ public class BasicShoot extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    
-    shoot.setRoller(3000);
-    if(Math.abs(shoot.getRollerSpeed()) -2900 >= Constants.shooter.shooterWheelTolerance){ 
-    shoot.setKickWheelSpeed(Constants.shooter.kickWheelSpeed);
+    shoot.runHood(.2);
   }
-}
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-   shoot.setRollerSpeed(0);
-   shoot.setKickWheelSpeed(0);
+    shoot.runHood(0);
   }
 
   // Returns true when the command should end.
