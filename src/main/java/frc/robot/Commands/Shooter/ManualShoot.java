@@ -42,7 +42,7 @@ public class ManualShoot extends Command {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    shoot.setRoller(0);
+    shoot.setRollerSpeed(0);
     //edu.wpi.first.wpilibj.smartdashboard.SmartDashboard.putBoolean("ManualShoot - Active", false);
     //shoot.setHoodSpeed(0);
   }

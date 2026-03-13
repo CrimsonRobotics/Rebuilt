@@ -83,8 +83,8 @@ public final class Constants {
     public static final double rateLimiterHood = 0.5; //TODO: Change this jawn
     public static final double manualAngle = 15; 
 
-    public static final double shooterP = .001;
-    public static final double shooterI = 0.01;
+    public static final double shooterP = .006;
+    public static final double shooterI = 0.000265; 
     public static final double shooterD = 0;
   }
 

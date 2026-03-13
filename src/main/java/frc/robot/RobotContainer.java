@@ -108,14 +108,14 @@ public class RobotContainer {
         );
         
         //towerDrive.whileTrue(new TowerDrive(sensor, drivetrain)); // Button 3 DL
-        //driveAroundTag.whileTrue(new DriveAroundTheTag(tracking, drivetrain, joystickDL)); // Button 1 DL
+        driveAroundTag.whileTrue(new DriveAroundTheTag(tracking, drivetrain, joystickDL)); // Button 1 DR
 
         //Shooter Button Bindings
        // shootAtPOI.whileTrue(new ShootAtPOI(shoot, tracking)); //Button 1 on OR
-        spoolShooter.whileTrue(new ManualShoot(shoot)); //Button 2 on OR FOR NOW and Hood up for now
+        spoolShooter.whileTrue(new ManualShoot(shoot)); //Button 1 on OR FOR NOW and Hood up for now
         basicShoot.whileTrue(new BasicShoot(shoot)); // Button 1 on OR FOR NOW 
-        //hoodUp.whileTrue(new HoodUp(shoot)); //Button 3 on OR
-        //hoodReverse.whileTrue(new HoodReverse(shoot)); // Button 4 on OR FOR NOW
+        hoodUp.whileTrue(new HoodUp(shoot)); //Button 3 on OR
+        hoodReverse.whileTrue(new HoodReverse(shoot)); // Button 4 on OR FOR NOW
        
         //Climber Button Bindings
         climbUp.whileTrue(new ClimbUp(climber));

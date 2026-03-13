@@ -43,7 +43,7 @@ public class DriveAroundTheTag extends Command {
   public void execute() {
     // Schedule the drive request while the tag is off-center by more than a
     // small deadband. Use absolute angle so left/right both cause rotation.
-    tracking.setPipelineTx();
+    //tracking.setPipelineTx();
     final double angleDeadbandDeg = .1; // tune as needed
     if (Math.abs(tracking.getAngle()) > angleDeadbandDeg) {
       if (!driveRequestCmd.isScheduled()) {
